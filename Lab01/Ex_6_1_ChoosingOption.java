@@ -13,12 +13,12 @@ public class Ex_6_1_ChoosingOption {
 		// - If choose "Cancel", the dialog will return "You've chosen: No" 
 		// - If you want to show 2 options, you should use JOptionPane.showOptionDialog:
 		String[] options = {"I do", "I don't"}; 
-			JOptionPane.showOptionDialog(null,"Do you want to change to the first class ticket?",
-			"Choose",
-			JOptionPane.DEFAULT_OPTION, 
-			JOptionPane.INFORMATION_MESSAGE,
-			null,
-			options, 
-			options[0]); 
+		JOptionPane.showOptionDialog(null,"Do you want to change to the first class ticket?",
+		"Choose",
+		JOptionPane.DEFAULT_OPTION, 
+		JOptionPane.INFORMATION_MESSAGE,
+		null,
+		options, 
+		options[0]); 
 	}
 }
