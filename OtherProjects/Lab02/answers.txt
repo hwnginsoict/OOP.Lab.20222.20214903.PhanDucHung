@@ -1,0 +1,1 @@
+No, java will not allow to create overloading methods that have the same numbers and the same types of arguments. In the question, the 2 constructor methods have 1 number of argument, is title or category, and this 2 parameters have the same type is String.
