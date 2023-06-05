@@ -1,5 +1,7 @@
-package aimsProject;
+package hust.soict.dsai.aims.cart;
+
 import java.util.ArrayList;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
@@ -20,6 +22,18 @@ public class Cart {
 		qtyOrdered += 1;
 		System.out.println("The disc has been added!");
 	}
+	public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
+//		for(int i=0; i< dvdList.length; i++) {
+//			addDigitalVideoDisc(dvdList[i]);
+//		}
+		for (DigitalVideoDisc disc: dvdList) {
+			addDigitalVideoDisc(disc);
+		}
+	}
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2) {
+		addDigitalVideoDisc(dvd1);
+		addDigitalVideoDisc(dvd2);
+	}
 	
 	public void removeDigitalVideoDisc (DigitalVideoDisc disc) {
 		try {
@@ -38,5 +52,31 @@ public class Cart {
 			total += itemsOrdered.get(i).getCost();
 		}
 		return total;
+	}
+	public void print() {
+		System.out.println("***********************CART***********************");
+		for (int i = 0; i < this.qtyOrdered; i++ ) {
+			System.out.println(i+1 + ". " + itemsOrdered.get(i));
+		}
+		System.out.println("Total cost: " + totalCost() + "$");
+		System.out.println("**************************************************");
+	}
+	public void searchId(int id) {
+		for(DigitalVideoDisc item: itemsOrdered) {
+			if(item.getId() == id) {
+				System.out.println(item);
+				return ;
+			}
+			System.out.println("No DVD is matched!");
+		}
+	}
+	public void searchTitle(String title) {
+		for(DigitalVideoDisc item: itemsOrdered) {
+			if(item.isMatch(title)) {
+				System.out.println(item);
+				return ;
+			}
+			System.out.println("No DVD is matched!");
+		}
 	}
 }
