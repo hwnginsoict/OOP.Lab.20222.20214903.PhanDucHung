@@ -1,3 +1,5 @@
+package hust.soict.dsai.lab01;
+
 import java.lang.Math;
 import java.util.Scanner;
 

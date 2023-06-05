@@ -1,4 +1,4 @@
-package aimsProject;
+package hust.soict.dsai.lab02.src;
 
 public class Aims {
 

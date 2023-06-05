@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.lang.Math;
+package hust.soict.dsai.lab01;
 
 public class Ex_2_2_6_Equations {
 	public static void FirstOneEquation() {

@@ -1,4 +1,4 @@
-package aimsProject;
+package hust.soict.dsai.lab02.src;
 import java.util.ArrayList;
 
 public class Cart {
