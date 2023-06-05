@@ -1,4 +1,4 @@
-package aimsProject;
+package hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
 	private String title;
@@ -7,26 +7,31 @@ public class DigitalVideoDisc {
 	private int length;
 	private float cost;
 	
-	DigitalVideoDisc(String title, String category, String director, int length, float cost){
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.length = length;
-		this.cost = cost;
+	private static int nbDigitalVideoDiscs = 0;
+	private int id;
+	
+	public DigitalVideoDisc(String title, String category, String director, int length, float cost){
+		this(director,category,title,cost);
+		this.setLength(length);
+//		this.id = nbDigitalVideoDiscs;
 	}
-	DigitalVideoDisc(String title){
+	public DigitalVideoDisc(String title){
 		this.title = title;
+		this.nbDigitalVideoDiscs ++;
+		this.id = nbDigitalVideoDiscs;
 	}
-	DigitalVideoDisc(String category, String title, float cost){
+	public DigitalVideoDisc(String category, String title, float cost){
+		this(title);
 		this.category = category;
-		this.title = title;
 		this.cost = cost;
+//		this.id = nbDigitalVideoDiscs;
 	}
-	DigitalVideoDisc(String director, String category, String title, float cost){
-		this.director = director;
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
+	public DigitalVideoDisc(String director, String category, String title, float cost){
+		this(category,title,cost);
+//		this.id = nbDigitalVideoDiscs;
+	}
+	public boolean isMatch(String title) {
+		return this.title.equals(title);
 	}
 	
 	public String getTitle() {
@@ -44,4 +49,36 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}
+	public int getNbDigitalVideoDiscs(){
+		return nbDigitalVideoDiscs;
+	}
+	public int getId() {
+		return id;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public void setDirector(String director) {
+		this.director = director;
+	}
+	public void setLength(int length) {
+		this.length = length;
+	}
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+	
+	@Override 
+	public String toString(){
+		return ("DVD - " + this.title 
+				+ " - " + this.category
+				+ " - " + this.director
+				+ " - " + this.length
+				+ ": " + this.cost + "$");
+	}
+	
 }
