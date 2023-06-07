@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims.media;
 
-public class Track {
+import hust.soict.dsai.aims.media.Playable;
+public class Track implements Playable{
 
 	private String title;
 	private int length;
@@ -11,6 +12,12 @@ public class Track {
 		this.setLength(length);
 		this.setTitle(title);
 	}
+	
+	public void play() {
+		System.out.println("Playing track: " + this.getTitle());
+		System.out.println("Track length: " + this.getLength());
+	}
+	
 	public String getTitle() {
 		return title;
 	}
