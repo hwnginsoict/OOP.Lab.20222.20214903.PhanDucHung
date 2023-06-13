@@ -7,12 +7,30 @@ public class CompactDisc extends Disc implements Playable {
 
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
+	
 	public CompactDisc() {
 		// TODO Auto-generated constructor stub
 	}
-	public CompactDisc(String artist) {
-		super();
+	
+	public CompactDisc(String title, String artist) {
+		this(title);
 		this.setArtist(artist);
+	}
+	
+	
+	public CompactDisc(String title){
+		super(title);
+	}
+	
+	public CompactDisc(String title, String category, float cost){
+		this(title);
+		this.setCategory(category);
+		this.setCost(cost);
+	}
+	
+	public CompactDisc(String director, String category, String title, float cost){
+		this(category,title,cost);
+		this.setDirector(director);
 	}
 	
 	public void addTrack(Track newTrack) {
@@ -65,5 +83,13 @@ public class CompactDisc extends Disc implements Playable {
 //		this.track = track;
 //	}
 	
+	@Override
+	public String toString() {
+		return ("CD - " + this.getTitle() 
+		+ " - " + this.getCategory()
+		+ " - " + this.getDirector()
+		+ " - " + this.getLength()
+		+ ": " + this.getCost() + "$");
+	}
 
 }
