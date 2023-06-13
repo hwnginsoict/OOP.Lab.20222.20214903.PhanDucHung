@@ -1,7 +1,0 @@
-2.1 I prefer method addDigitalVideoDisc(DigitalVideoDisc [] dvdList) as it optimize the code to use, we don't need to create overloading method for each abitrary number of arguments
-
-3. Java is a Pass by Value programming language
-- swap() method: the local variable o1, o2 hold copies of the references to the jungleDVD and cinderellaDVD. The swap method swaps the values of these 2 local variables, but not affect the original references of variables jungleDVD and cinderella DVD.
-- changeTitle() method: the method setTitle(title) sets the title attribute of the original object to the value of the title parameter. The line "dvd = new DigitalVideoDisc(oldTitle);" makes the local variable dvd refer to the new object that is created with the old title of dvd; this does not affect the original reference of jungleDVD variable in the main method and the original object. So original object still has its title attribute updated to the value of the title of cinderellaDVD.
-
-6. The return type of toString() method should be String.
